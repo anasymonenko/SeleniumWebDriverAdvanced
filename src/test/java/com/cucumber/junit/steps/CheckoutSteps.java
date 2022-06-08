@@ -25,7 +25,7 @@ public class CheckoutSteps {
         homePage.openBookDepositoryWebsite();
     }
 
-    @When("the user enters {string} into the search input")
+    @When("^the user enters ([\\w\\s]+) into the search input$")
     public void enterSearchTerm(String searchTerm) {
         homePage.getMenuSearchField().sendKeys(searchTerm);
     }
@@ -35,7 +35,7 @@ public class CheckoutSteps {
         homePage.getSearchButton().click();
     }
 
-    @And("Search results page with URL {string} is displayed")
+    @And("^Search results page with URL ((?:http|https):\\/\\/[\\w+./?=&]+) is displayed$")
     public void searchResultsPageWithURLIsDisplayed(String expectedURL) {
         Assert.assertEquals("Page URL is incorrect", expectedURL, searchResultsPage.getPageUrl());
     }
@@ -84,7 +84,7 @@ public class CheckoutSteps {
                 });
 }
 
-    @And("the user set {string} as e-mail address")
+    @And("^the user set ([A-Za-z0-9.\\-_]{3,25}@[A-Za-z]{3,5}\\.[A-Za-z]{3,}) as e-mail address$")
     public void setEmailAddress(String email) {
         checkoutPage.getEmailInput().sendKeys(email);
     }
