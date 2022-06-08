@@ -8,15 +8,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertAll;
 
 public class CheckoutSteps {
 
@@ -50,8 +44,6 @@ public class CheckoutSteps {
     public void clicksAddToBasketButton() {
         searchResultsPage.getAddToBasketButton().click();
     }
-
-
 
     @And("the user clicks on Basket-Checkout button in basket pop-up")
     public void clickBasketCheckoutButton() {basketPopUp.getBasketCheckoutButton().click();
