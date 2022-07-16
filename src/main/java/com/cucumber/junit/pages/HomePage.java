@@ -2,6 +2,8 @@ package com.cucumber.junit.pages;
 
 import com.cucumber.junit.driver.DriverManager;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
@@ -15,7 +17,7 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "//input[@name = 'searchTerm']")
     WebElement searchField;
 
-    @FindBy (xpath = "//span[text()='Search']")
+    @FindBy (className = "header-search-btn") //(xpath = "//span[text()='Search']")
     WebElement searchButton;
 
     public WebElement getMenuSearchField(){
@@ -24,5 +26,17 @@ public class HomePage extends BasePage {
 
     public WebElement getSearchButton(){
         return searchButton;
+    }
+
+    public void searchForBook(String string) {
+        Actions builder = new Actions(DriverManager.getDriver());
+        Action searchBySearchTerm = builder
+                .moveToElement(searchField)
+                .click()
+                .sendKeys(string)
+                .moveToElement(searchButton)
+                .click()
+                .build();
+        searchBySearchTerm.perform();
     }
 }
