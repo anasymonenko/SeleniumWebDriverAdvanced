@@ -40,10 +40,10 @@ public class CheckoutForGuestSteps {
 
     @And("I search for {string}")
     public void searchForSearchTerm(String searchTerm) {
-        //homePage.getMenuSearchField().sendKeys(searchTerm);
-        //homePage.getSearchButton().click();
+        homePage.getMenuSearchField().sendKeys(searchTerm);
+        homePage.getSearchButton().click();
 
-        homePage.searchForBook(searchTerm);
+        //homePage.searchForBook(searchTerm);
     }
 
     @And("I am redirected to a {string}")
