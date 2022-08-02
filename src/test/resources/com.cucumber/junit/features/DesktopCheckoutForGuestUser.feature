@@ -11,14 +11,14 @@ Feature: Desktop Checkout for Guest User
     And I search for "Stranger things"
     And I am redirected to a "Search results"
     And Search results contain the following products
-      | Stranger Things: Runaway Max      |
-      | Stranger Things: Rebel Robin      |
-      | Stranger Things: Suspicious Minds |
+      | Stranger Things: Suspicious Minds               |
+      | Stranger Things: Rebel Robin                    |
+      | Stranger Things: The Other Side (graphic Novel) |
     And I apply the following search filters
       | Price range  | 30 € +           |
-      | Availability | Pre-order (22)   |
-      | Language     | English (1,024)  |
-      | Format       | Hardback (202)   |
+      | Availability | Pre-order (20)   |
+      | Language     | English (1,025)  |
+      | Format       | Hardback (203)   |
     And Search results contain only the following products
       | Stranger Things: The Ultimate Pop-Up Book                                    |
       | Stranger Things: The Ultimate Pop-Up Book                                    |
